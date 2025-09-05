@@ -14,9 +14,9 @@ import io
 import tempfile
 
 creds_json = os.getenv("GOOGLE_CREDENTIALS")
-CREDENTS_FILE = json.loads(creds_json)  # הנתיב לקובץ שלך
+CREDENTS_DICT = json.loads(creds_json)  # הנתיב לקובץ שלך
 SCOPES = ['https://www.googleapis.com/auth/drive']
-CREDENTIALS = service_account.Credentials.from_service_account_file(CREDENTS_FILE, scopes=SCOPES)
+CREDENTIALS = service_account.Credentials.from_service_account_info(CREDENTS_DICT, scopes=SCOPES)
 DRIVE_SERVICE = build('drive', 'v3', credentials=CREDENTIALS)
 
 def get_file_from_drive(file_id):
