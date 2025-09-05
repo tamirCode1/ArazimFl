@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='TAB_PIC.png') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כניסה למערכת</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #a3c9f1, #d0e6fa);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 320px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .login-container h2 {
+            margin-bottom: 24px;
+            color: #2c6db2;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 14px;
+            margin-bottom: 20px;
+            border: 1px solid #b3cde7;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2c6db2;
+            color: white;
+            border: none;
+            padding: 10px 0;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #255b95;
+        }
+
+        /* --- ריספונסיביות --- */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            input[type="password"] {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .login-container {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>כניסה למערכת</h2>
+        <form action="/" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.password(size=32, placeholder="סיסמה") }}
+            <button type="submit" class="submit-button">כניסה</button>
+        </form>
+    </div>
+</body>
+</html>

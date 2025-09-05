@@ -1,0 +1,27 @@
+{
+  "id": "1h6ktadAfxDFBGtN7yufdSFpT1_lPk-iO",
+  "waiting_path": "static/arazim_waitings.xlsx",
+  "manager_pass": "123456",
+  "user_pass": "12345678",
+  "sender_mail" : "tamir.f.e.11@gmail.com",
+  "sender_pass" : "ynyc xgpe akeg pkqf",
+  "fields": {
+            "vendor": "ספק",
+            "fname": "שם פרטי",
+            "lname": "שם משפחה",
+            "role": "תפקיד",
+            "cell_phone": "נייד",
+            "phone_a": "טלפון ראשי",
+            "phone_b": "טלפון משני",
+            "fax": "פקס",
+            "email": "מייל",
+            "summary": "איך מופיע בתמצית",
+            "on_post": "איך מופיע באתר הדואר",
+            "on_msg": "איך מופיע בהודעת צד ג'",
+            "bank_account": "חשבון בנק",
+            "bank_branch": "מס סניף",
+            "bank_number": "מס בנק"
+        },
+  "secret_key": "DavidArazim"
+
+}

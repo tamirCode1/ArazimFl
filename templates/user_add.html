@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='TAB_PIC.png') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הוספת רשומה חדשה</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #a3c9f1, #d0e6fa);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .form-container {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        width: 95%;              /* יתפוס כמעט את כל המסך */
+        max-width: 900px;        /* אבל לא יעבור את הרוחב הזה */
+        text-align: right;
+        box-sizing: border-box;  /* חשוב כדי שהpadding לא יחרוג מהרוחב */
+        margin-top: 25px;        /* רווח מהסרגל למעלה */
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        font-weight: bold;
+        color: #2c6db2;
+        margin-bottom: 4px;
+    }
+    input[type="text"],
+    input[type="number"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+    .submit-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #2c6db2;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+    .submit-button:hover {
+        background-color: #255b95;
+    }
+    .navbar {
+            width: 100%;
+            background-color: #2c6db2;
+            display: flex;
+            align-items: center;
+            justify-content: start; /* הלוגו וכפתורים יחד בהתחלה */
+            gap: 10px; /* רווח בין הלוגו לכפתורים */
+            padding: 0 16px;
+            height: 56px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            height: 40px; /* מתאים ללוגו */
+            margin-right: 15px; /* מוסיף רווח קטן לכיוון שמאל */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-direction: row-reverse; /* כדי שב־rtl הכפתורים יהיו מהימין לשמאל */
+        }
+
+        .nav-button {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 6px 12px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* רווח בין הסרגל לקונטיינר */
+        .container {
+            margin-top: 25px; /* רווח יפה מלמעלה */
+        }
+
+
+</style>
+</head>
+<body>
+<div class="navbar">
+        <img src="/static/logo.png" alt="Logo" class="logo">
+        <div class="nav-links">
+            <a href="/logout" class="nav-button">יציאה</a>
+        </div>
+    </div>
+
+<div class="form-container">
+    <form action="/user" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.vendor.label }}
+            {{ form.vendor() }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label }}
+            {{ form.email() }}
+        </div>
+        <div class="form-group">
+            {{ form.phone_a.label }}
+            {{ form.phone_a() }}
+        </div>
+        <div class="form-group">
+            {{ form.phone_b.label }}
+            {{ form.phone_b() }}
+        </div>
+        <div class="form-group">
+            {{ form.cell_phone.label }}
+            {{ form.cell_phone() }}
+        </div>
+        <div class="form-group">
+            {{ form.fax.label }}
+            {{ form.fax() }}
+        </div>
+        <div class="form-group">
+            {{ form.fname.label }}
+            {{ form.fname() }}
+        </div>
+        <div class="form-group">
+            {{ form.lname.label }}
+            {{ form.lname() }}
+        </div>
+        <div class="form-group">
+            {{ form.role.label }}
+            {{ form.role() }}
+        </div>
+        <div class="form-group">
+            {{ form.summary.label }}
+            {{ form.summary() }}
+        </div>
+        <div class="form-group">
+            {{ form.on_post.label }}
+            {{ form.on_post() }}
+        </div>
+        <div class="form-group">
+            {{ form.on_msg.label }}
+            {{ form.on_msg() }}
+        </div>
+        <div class="form-group">
+            {{ form.bank_account.label }}
+            {{ form.bank_account() }}
+        </div>
+        <div class="form-group">
+            {{ form.bank_branch.label }}
+            {{ form.bank_branch() }}
+        </div>
+        <div class="form-group">
+            {{ form.bank_number.label }}
+            {{ form.bank_number() }}
+        </div>
+
+        <button type="submit" class="submit-button">הוסף</button>
+    </form>
+
+</div>
+
+</body>
+</html>
